@@ -1,0 +1,209 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    margin-top: 20px;
+}
+
+.avg_wrapper {
+    width: 600px;
+    margin: auto;
+    font: 16px/25px regular 'Noto Sans', sans-serif;
+}
+.avg_left {
+  float: left;
+}
+.avg_right {
+  float: right;
+}
+.avg_center {
+  text-align: center;
+}
+.avg_header {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    line-height: 42px;
+}
+.avg_line {
+  margin: 5px 0;
+}
+.avg_header .avg_btn {
+  width: 150px;
+  text-align: center;
+}
+.avg_footer {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: right;
+    font-size: 22px;
+    color: #8f7a66;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px black, 0 0 1em white;
+}
+.avg_header:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.avg_title {
+    text-align: center;
+  font-size: 56px;
+  line-height: 140px;
+  color: #8f7a66;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px black, 0 0 1em white;
+}
+.avg_btn {
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+}
+.avg_btn[disabled] {
+    opacity: .7;
+}
+.avg_game {
+    min-height: 200px;
+    background: #BBADA0;
+    border-radius: 5px;
+    font-size: 56px;
+}
+.avg_game:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.avg_game > .avg_field {
+    line-height: 0;
+    font-weight: bold;
+    text-align: center;
+    color: #888;
+    border-radius: 3px;
+    text-shadow: 1px 1px 2px black, 0 0 1em white;
+    float: left;
+    cursor: pointer;
+    border: 1px dotted #CCC;
+    background-color: #CCC0B3;
+}
+.avg_score-wr {
+    height: 85px;
+}
+.avg_new-game:hover,
+.avg_undo:hover {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(transparent),color-stop(40%,rgba(0,0,0,.05)),to(rgba(0,0,0,.1)));
+    background-image: -webkit-linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+    background-image: -moz-linear-gradient(top,rgba(0,0,0,.05) 0,rgba(0,0,0,.1));
+    background-image: -o-linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+    background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+}
+
+.avg_controls-inner > .avg_btn {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.avg_controls-inner {
+    position: relative;
+}
+.avg_controls-inner > .avg_ctrl-up {
+    left: 100px;
+}
+.avg_controls-inner > .avg_ctrl-left {
+    top: 50px;
+}
+.avg_controls-inner > .avg_ctrl-right {
+    left: 200px;
+    top: 50px;
+}
+.avg_controls-inner > .avg_ctrl-down {
+    left: 100px;
+    top: 100px;
+}
+.avg_select {
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    width: 100px;
+}
+
+.avg_maze-container {
+    background: #FFF;
+}
+
+.avg_maze-td.left { border-left: 2px solid #000; }
+.avg_maze-td.top { border-top: 2px solid #000; }
+.avg_maze-td.right { border-right: 2px solid #000; }
+.avg_maze-td.bottom { border-bottom: 2px solid #000; }
+
+.avg_maze-tr {
+}
+.avg_maze-tr:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.avg_maze-td {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+.avg_maze-td.visited {
+    background: #EEE;
+}
+.avg_maze-td.current {
+    background: red;
+}
+.avg_maze-td.start {
+    background: yellow;
+}
+.avg_maze-td.stop {
+    background: #8F8;
+}
+
+.avg_maze-0 {
+    background: #FFF;
+}
+.avg_maze-1 {
+    background: yellow;
+}
+
+.avg_maze--1 {
+    background: #888;
+}
+.avg_maze-tr:nth-child(2n+1) .avg_maze--1:nth-child(2n+1) {
+    background: #EEE;
+}
+.avg_maze-tr:nth-child(2n+1) .avg_maze--1:nth-child(2n) {
+    background: #888;
+}
+.avg_maze-tr:nth-child(2n) .avg_maze--1:nth-child(2n+1) {
+    background: #888;
+}
+.avg_maze-tr:nth-child(2n) .avg_maze--1:nth-child(2n) {
+    background: #EEE;
+}
