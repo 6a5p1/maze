@@ -1,29 +1,16 @@
-*, *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-body {
-    margin-top: 20px;
-}
-
 .avg_wrapper {
-    width: 600px;
     margin: auto;
-    font: 16px/25px regular 'Noto Sans', sans-serif;
+    font: 14px/20px regular, sans-serif;
 }
+.avg_wrapper label { cursor: pointer; }
 .avg_left {
-  float: left;
+    float: left;
 }
 .avg_right {
-  float: right;
+    float: right;
 }
 .avg_center {
-  text-align: center;
+    text-align: center;
 }
 .avg_header {
     margin-bottom: 20px;
@@ -33,10 +20,17 @@ body {
 .avg_line {
   margin: 5px 0;
 }
-.avg_header .avg_btn {
-  width: 150px;
+.avg_header .avg_btn,
+.avg_header .avg_select {
+  width: 100%;
   text-align: center;
 }
+.avg_header .avg_left,
+.avg_header .avg_right {
+    max-width: 30%;
+    width: 150px;
+}
+
 .avg_footer {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -54,11 +48,13 @@ body {
 }
 .avg_title {
     text-align: center;
-  font-size: 56px;
-  line-height: 140px;
-  color: #8f7a66;
-  letter-spacing: 3px;
-  text-shadow: 1px 1px 2px black, 0 0 1em white;
+    font-size: 56px;
+    line-height: 86px;
+    color: #8f7a66;
+    letter-spacing: 3px;
+    margin: 0;
+    font-family: serif;
+    text-shadow: 1px 1px 2px black, 0 0 1em white;
 }
 .avg_btn {
     background: #8f7a66;
@@ -70,9 +66,26 @@ body {
     cursor: pointer;
     display: block;
     font-weight: bold;
+    border: 0;
 }
+.avg_btn + .avg_btn,
+.avg_btn + .avg_select,
+.avg_select + .avg_select,
+.avg_select + .avg_btn { margin-top: 5px; }
 .avg_btn[disabled] {
     opacity: .7;
+}
+.avg_select {
+    background: #fff;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #8f7a66;
+    border-color: #8f7a66;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
 }
 .avg_game {
     min-height: 200px;
@@ -95,14 +108,13 @@ body {
     float: left;
     cursor: pointer;
     border: 1px dotted #CCC;
-    background-color: #CCC0B3;
+    background-color: #CCC0B3;    
 }
 .avg_score-wr {
     height: 85px;
 }
 .avg_new-game:hover,
 .avg_undo:hover {
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0);
     background-image: -webkit-gradient(linear,0 0,0 100%,from(transparent),color-stop(40%,rgba(0,0,0,.05)),to(rgba(0,0,0,.1)));
     background-image: -webkit-linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
     background-image: -moz-linear-gradient(top,rgba(0,0,0,.05) 0,rgba(0,0,0,.1));
@@ -134,30 +146,23 @@ body {
     left: 100px;
     top: 100px;
 }
-.avg_select {
-    background: #8f7a66;
-    border-radius: 3px;
-    padding: 0 20px;
-    text-decoration: none;
-    color: #f9f6f2;
-    height: 40px;
-    cursor: pointer;
-    display: block;
-    font-weight: bold;
-    width: 100px;
-}
+
 
 .avg_maze-container {
     background: #FFF;
+    border: 1px solid #000;
+    margin: -1px;
 }
 
-.avg_maze-td.left { border-left: 2px solid #000; }
-.avg_maze-td.top { border-top: 2px solid #000; }
-.avg_maze-td.right { border-right: 2px solid #000; }
-.avg_maze-td.bottom { border-bottom: 2px solid #000; }
+.avg_maze-td.left { border-left: 1px solid #000; }
+.avg_maze-td.top { border-top: 1px solid #000; }
+.avg_maze-td.right { border-right: 1px solid #000; }
+.avg_maze-td.bottom { border-bottom: 1px solid #000; }
+.avg_maze-td.toleft:before { content: '←'; }
+.avg_maze-td.totop:before { content: '↑'; }
+.avg_maze-td.toright:before { content: '→'; }
+.avg_maze-td.tobottom:before { content: '↓'; }
 
-.avg_maze-tr {
-}
 .avg_maze-tr:after {
     content: '';
     display: block;
@@ -169,41 +174,19 @@ body {
     width: 20px;
     height: 20px;
     line-height: 20px;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
+    box-sizing: border-box;
 }
 .avg_maze-td.visited {
-    background: #EEE;
+    background: #ffec88;
 }
 .avg_maze-td.current {
     background: red;
 }
 .avg_maze-td.start {
-    background: yellow;
+    background: #ffcc88;
 }
 .avg_maze-td.stop {
-    background: #8F8;
-}
-
-.avg_maze-0 {
-    background: #FFF;
-}
-.avg_maze-1 {
-    background: yellow;
-}
-
-.avg_maze--1 {
-    background: #888;
-}
-.avg_maze-tr:nth-child(2n+1) .avg_maze--1:nth-child(2n+1) {
-    background: #EEE;
-}
-.avg_maze-tr:nth-child(2n+1) .avg_maze--1:nth-child(2n) {
-    background: #888;
-}
-.avg_maze-tr:nth-child(2n) .avg_maze--1:nth-child(2n+1) {
-    background: #888;
-}
-.avg_maze-tr:nth-child(2n) .avg_maze--1:nth-child(2n) {
-    background: #EEE;
+    background: #ff8888;
 }
