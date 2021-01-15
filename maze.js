@@ -24,11 +24,11 @@ const DY = {
 };
 
 class Maze {
-    constructor(options = {}) {
+    constructor(options = { x: 20, y: 20}) {
         this.options = options;
 
-        this.X = options.x || 20;
-        this.Y = options.y || 20;
+        this.X = options.x;
+        this.Y = options.y;
 
         this.START = { x: 0, y: 0 };
         this.STOP = { x: this.X - 1, y: this.Y - 1 };
