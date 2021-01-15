@@ -49,7 +49,7 @@ class Maze {
                     <div class="avg_right">
                         <button class="avg_btn avg_solve">Solve</button>
                         <input type="checkbox" id="show_arrows"${this.options.showArrows ? ' checked' : ''}>
-                        <label for="show_arrows">show arrows</label>
+                        <label for="show_arrows">arrows</label>
                     </div>
                     <h1 class="avg_title">Maze</h1>
                 </div>
